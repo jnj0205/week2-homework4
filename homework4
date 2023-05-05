@@ -1,0 +1,62 @@
+
+#1) Create a program that allows a user to continue to add people to an address book 
+#until the user quits. Once the user quits, break out of the loop and print out the name
+#and address of everyone in the address book
+#Steps
+#Create a function that will ask user for name and addresses and stores them in 
+#a dictionary
+#Define an empty dictionary with which to work (global or local variable?)
+#Begin a loop that will continue to ask a user for information until the user "quits"
+#If the user does not quit, ask for a name and address and store the variables into
+# variables
+#Add information to the dictionary with name as the key and address as the value
+#If the user does quit, end the loop
+#Print out the information from the dictionary in a formatted way
+#Execute/Call the function
+
+def get_full_information(first_name, last_name, address_book):
+    full_info = first_name + ' ' + last_name + ' ' + address_book
+    return full_info.title()
+
+while True:
+    print("What is your name?")
+    print("enter 'q' at any time to quit")
+    
+    f_name = input("First name: ")
+    if f_name == 'q':
+        break
+    
+    l_name = input("Last name: ")
+    if l_name == "q":
+        break
+    
+    address = input("Home addres: ")
+    if address == 'q':
+        break
+full_information = get_full_information(first_name, last_name, address_book)
+print(full_information)
+
+
+
+
+
+
+
+###Exercise 2
+###2) Best Time to Meet
+#Billy is trying to figure out if there is a time that he and his team can meet to work 
+#on the project. His three teammates each give him a list of times they are available 
+#('HH:MM' 24-hour). Create a function that will take in an original list plus any number 
+#of lists of teammate's available times (remember *args) and return a list of times where 
+#everyone can meet.
+
+person1= {'09:00', '10:30', '11:30', '12:00', '13:00', '14:30'}
+person2= {'09:30', '10:00', '10:30', '12:00', '14:30', '16:00'}
+person3= {'09:00', '09:30', '11:00', '11:30', '12:00', '13:30', '14:30', '15:00'}
+person4= {'11:00', '11:30', '12:00', '14:00', '14:30', '16:30', '17:00'}
+
+
+result = person1.intersection(person2, person3, person4)
+        
+
+print(result)
